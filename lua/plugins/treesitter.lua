@@ -3,8 +3,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup({
-        -- Установка парсеров для твоих основных языков
+      require("nvim-treesitter").setup({
         ensure_installed = { "c", "cpp", "lua", "vim", "kotlin", "python" },
         highlight = { enable = true },
         indent = { enable = true },
