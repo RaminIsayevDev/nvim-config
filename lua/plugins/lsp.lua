@@ -17,9 +17,11 @@ return {
   {
     "neovim/nvim-lspconfig", -- Настройка самих серверов
     config = function()
-      local lspconfig = require("lspconfig")
-      lspconfig.clangd.setup({}) -- Для C/C++ (ESP32)
-      lspconfig.kotlin_language_server.setup({}) -- Для Kotlin
+      vim.lsp.config('clangd', {})
+      vim.lsp.config('kotlin_language_server', {})
+      vim.lsp.config('pyright', {})
+
+      vim.lsp.enable({'clangd', 'kotlin_language_server', 'pyright'})
     end
   }
 }
